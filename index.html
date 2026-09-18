@@ -211,11 +211,10 @@
         .vocab-num { font-weight: bold; color: var(--accent-color); width: 8%; }
         .vocab-pinyin { font-weight: bold; color: var(--primary-color); width: 22%; }
         .vocab-meaning { width: 25%; }
-        .vocab-details { width: 45%; font-size: 0.95rem; }
         .vocab-collo { color: var(--text-sub); font-style: italic; margin-bottom: 4px; }
         .vocab-sent { color: var(--primary-color); font-weight: 500; }
 
-        /* DIALOGUE BOX */
+        /* DIALOGUE BOX & TURN STYLES */
         .dialogue-box {
             background-color: #FFFFFF;
             border-left: 4px solid var(--accent-color);
@@ -226,7 +225,33 @@
 
         .speaker { font-weight: bold; color: var(--primary-color); }
 
-        /* EXERCISE SINGLE LINE BLOCKS */
+        /* LINE-BY-LINE DIALOGUE STYLES FOR EXERCISES */
+        .dlg-prompt-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 1.2rem 0 0.4rem 0;
+        }
+
+        .dlg-turn {
+            padding: 0.5rem 0.8rem;
+            margin-bottom: 0.3rem;
+            background-color: #F8FAFC;
+            border-left: 3px solid var(--primary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.98rem;
+        }
+
+        .dlg-turn-ans {
+            padding: 0.5rem 0.8rem;
+            margin-bottom: 0.3rem;
+            background-color: #EFF6FF;
+            border-left: 3px solid var(--answer-blue);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.98rem;
+            color: #1E40AF;
+        }
+
         .ex-line-item {
             padding: 0.6rem 0.8rem;
             background-color: #F8FAFC;
@@ -240,17 +265,6 @@
             font-weight: 600;
             color: var(--primary-color);
         }
-
-        .answer-block-line {
-            background-color: #EFF6FF;
-            border-left: 4px solid var(--answer-blue);
-            padding: 0.6rem 1rem;
-            margin: 0.4rem 0 1rem 0;
-            border-radius: 0 6px 6px 0;
-            font-size: 0.98rem;
-        }
-
-        .answer-text { color: #1E40AF; font-weight: 500; }
 
         .checklist-item {
             display: flex;
@@ -579,7 +593,7 @@
         <!-- TAB 5: EXERCISES & SOLUTIONS -->
         <section id="tab-exercises" class="tab-content">
             <div class="content-header">
-                <h2>Textbook Drills & Reference Answers (Clean 1-Line Format)</h2>
+                <h2>Textbook Drills & Reference Answers</h2>
             </div>
 
             <!-- EXERCISE 1 -->
@@ -596,64 +610,167 @@
             <div class="card">
                 <div class="card-title">2. Pattern Drills (Pg 137-139)</div>
 
-                <div class="ex-line-item"><span class="ex-q">Drill (1) Model:</span> A: Jīntiān shì (jǐ yuè) jǐ hào? <span class="translation">(What date is today?)</span> -> B: Jīntiān shì (shíyī yuè) bā hào. <span class="translation">(Today is Nov 8th.)</span> -> A: Míngtiān shì xīngqī jǐ? <span class="translation">(What day is tomorrow?)</span> -> B: Míngtiān shì xīngqī'èr. <span class="translation">(Tomorrow is Tuesday.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">1. Prompt (9/26 Sun): A: Jīntiān shì jǐ yuè jǐ hào? -> B: Jīntiān shì jiǔ yuè èrshíliù hào. <span class="translation">(Today is Sept 26th.)</span> | A: Míngtiān shì xīngqī jǐ? -> B: Míngtiān shì xīngqīyī. <span class="translation">(Tomorrow is Monday.)</span></span></div>
-                <div class="answer-block-line"><span class="answer-text">2. Prompt (10/15 Thu): A: Jīntiān shì jǐ yuè jǐ hào? -> B: Jīntiān shì shí yuè shíwǔ hào. <span class="translation">(Today is Oct 15th.)</span> | A: Míngtiān shì xīngqī jǐ? -> B: Míngtiān shì xīngqīwǔ. <span class="translation">(Tomorrow is Friday.)</span></span></div>
-                <div class="answer-block-line"><span class="answer-text">3. Prompt (12/30 Fri): A: Jīntiān shì jǐ yuè jǐ hào? -> B: Jīntiān shì shí'èr yuè sānshí hào. <span class="translation">(Today is Dec 30th.)</span> | A: Míngtiān shì xīngqī jǐ? -> B: Míngtiān shì xīngqīliù. <span class="translation">(Tomorrow is Saturday.)</span></span></div>
+                <div class="dlg-prompt-title">Drill (1) Model:</div>
+                <div class="dlg-turn">A: Jīntiān shì (jǐ yuè) jǐ hào? <span class="translation">(What date is today?)</span></div>
+                <div class="dlg-turn">B: Jīntiān shì (shíyī yuè) bā hào. <span class="translation">(Today is Nov 8th.)</span></div>
+                <div class="dlg-turn">A: Míngtiān shì xīngqī jǐ? <span class="translation">(What day of the week is tomorrow?)</span></div>
+                <div class="dlg-turn">B: Míngtiān shì xīngqī'èr. <span class="translation">(Tomorrow is Tuesday.)</span></div>
 
-                <div class="ex-line-item" style="margin-top:1.2rem;"><span class="ex-q">Drill (2) Model:</span> A: Liù yuè sì hào shì bu shì xīngqīliù? <span class="translation">(Is June 4th Saturday?)</span> -> B: Liù yuè sì hào bú shì xīngqīliù, shì xīngqīwǔ. <span class="translation">(June 4th is Friday.)</span> -> A: Xīngqīwǔ nǐ yǒu méiyǒu kè? <span class="translation">(Do you have class on Friday?)</span> -> B: Wǒ shàngwǔ yǒu kè, xiàwǔ méi yǒu kè. <span class="translation">(I have morning class, no afternoon class.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans (6/10 Thu): A: Liù yuè shí hào shì bu shì xīngqīliù? -> B: Liù yuè shí hào bú shì xīngqīliù, shì xīngqīsì. <span class="translation">(June 10th is Thursday.)</span> | A: Xīngqīsì nǐ yǒu méiyǒu kè? -> B: Wǒ shàngwǔ yǒu kè, xiàwǔ méi yǒu kè. <span class="translation">(I have morning class, no afternoon class.)</span></span></div>
+                <div class="dlg-prompt-title">Prompt 1 (9/26 Sun):</div>
+                <div class="dlg-turn-ans">A: Jīntiān shì jǐ yuè jǐ hào? <span class="translation">(What date is today?)</span></div>
+                <div class="dlg-turn-ans">B: Jīntiān shì jiǔ yuè èrshíliù hào. <span class="translation">(Today is Sept 26th.)</span></div>
+                <div class="dlg-turn-ans">A: Míngtiān shì xīngqī jǐ? <span class="translation">(What day is tomorrow?)</span></div>
+                <div class="dlg-turn-ans">B: Míngtiān shì xīngqīyī. <span class="translation">(Tomorrow is Monday.)</span></div>
 
-                <div class="ex-line-item" style="margin-top:1.2rem;"><span class="ex-q">Drill (3) Model:</span> A: Xīngqīyī shì jǐ hào? <span class="translation">(What date is Monday?)</span> -> B: Xīngqīyī shì shí'èr yuè èrshí hào. <span class="translation">(Monday is Dec 20th.)</span> -> A: Xīngqīyī tā zuò shénme? <span class="translation">(What does he do on Monday?)</span> -> B: Tā qù péngyou jiā. <span class="translation">(He goes to a friend's house.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">1. Prompt (xīngqīwǔ / kàn Jīngjù): A: Xīngqīwǔ shì jǐ hào? -> B: Xīngqīwǔ shì shí'èr yuè èrshísān hào. <span class="translation">(Friday is Dec 23rd.)</span> | A: Xīngqīwǔ tā zuò shénme? -> B: Tā qù kàn Jīngjù. <span class="translation">(He watches Beijing Opera.)</span></span></div>
-                <div class="answer-block-line"><span class="answer-text">2. Prompt (xīngqīliù / cānjiā jùhuì): A: Xīngqīliù shì jǐ hào? -> B: Xīngqīliù shì shí'èr yuè èrshísì hào. <span class="translation">(Saturday is Dec 24th.)</span> | A: Xīngqīliù tā zuò shénme? -> B: Tā cānjiā jùhuì. <span class="translation">(He attends a party.)</span></span></div>
+                <div class="dlg-prompt-title">Prompt 2 (10/15 Thu):</div>
+                <div class="dlg-turn-ans">A: Jīntiān shì jǐ yuè jǐ hào? <span class="translation">(What date is today?)</span></div>
+                <div class="dlg-turn-ans">B: Jīntiān shì shí yuè shíwǔ hào. <span class="translation">(Today is Oct 15th.)</span></div>
+                <div class="dlg-turn-ans">A: Míngtiān shì xīngqī jǐ? <span class="translation">(What day is tomorrow?)</span></div>
+                <div class="dlg-turn-ans">B: Míngtiān shì xīngqīwǔ. <span class="translation">(Tomorrow is Friday.)</span></div>
 
-                <div class="ex-line-item" style="margin-top:1.2rem;"><span class="ex-q">Drill (4) Model:</span> A: Nǐ xiànzài máng bu máng? <span class="translation">(Are you busy now?)</span> -> B: Wǒ xiànzài hěn máng. <span class="translation">(I am busy now.)</span> -> A: Nǐ xīngqī jǐ yǒu shíjiān? <span class="translation">(Which day do you have time?)</span> -> B: Wǒ xīngqīwǔ xiàwǔ yǒu shíjiān. <span class="translation">(I have time Friday afternoon.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">1. Prompt (xīngqīrì): A: Nǐ xīngqī jǐ yǒu shíjiān? -> B: Wǒ xīngqīrì yǒu shíjiān. <span class="translation">(I have time on Sunday.)</span></span></div>
-                <div class="answer-block-line"><span class="answer-text">2. Prompt (xīngqīsì shàngwǔ): A: Nǐ xīngqī jǐ yǒu shíjiān? -> B: Wǒ xīngqīsì shàngwǔ yǒu shíjiān. <span class="translation">(I have time Thursday morning.)</span></span></div>
+                <div class="dlg-prompt-title">Prompt 3 (12/30 Fri):</div>
+                <div class="dlg-turn-ans">A: Jīntiān shì jǐ yuè jǐ hào? <span class="translation">(What date is today?)</span></div>
+                <div class="dlg-turn-ans">B: Jīntiān shì shí'èr yuè sānshí hào. <span class="translation">(Today is Dec 30th.)</span></div>
+                <div class="dlg-turn-ans">A: Míngtiān shì xīngqī jǐ? <span class="translation">(What day is tomorrow?)</span></div>
+                <div class="dlg-turn-ans">B: Míngtiān shì xīngqīliù. <span class="translation">(Tomorrow is Saturday.)</span></div>
 
-                <div class="ex-line-item" style="margin-top:1.2rem;"><span class="ex-q">Drill (6) Model:</span> A: Nǐ jīnnián duō dà? <span class="translation">(How old are you?)</span> -> B: Wǒ jīnnián 21 suì. <span class="translation">(I am 21.)</span> -> A: Nǐ de shēngri shì nǎ tiān? <span class="translation">(When is your birthday?)</span> -> B: Wǒ de shēngri shì 8 yuè 21 hào. <span class="translation">(My birthday is Aug 21st.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">1. Prompt (19 / 1 yuè 6 rì): A: Nǐ jīnnián duō dà? -> B: Wǒ jīnnián shíjiǔ suì. <span class="translation">(I am 19.)</span> | A: Nǐ de shēngri shì nǎ tiān? -> B: Wǒ de shēngri shì yī yuè liù hào. <span class="translation">(My birthday is Jan 6th.)</span></span></div>
-                <div class="answer-block-line"><span class="answer-text">2. Prompt (20 / 3 yuè 12 rì): A: Nǐ jīnnián duō dà? -> B: Wǒ jīnnián èrshí suì. <span class="translation">(I am 20.)</span> | A: Nǐ de shēngri shì nǎ tiān? -> B: Wǒ de shēngri shì sān yuè shí'èr hào. <span class="translation">(My birthday is Mar 12th.)</span></span></div>
+                <div class="dlg-prompt-title" style="margin-top:1.8rem;">Drill (2) Model:</div>
+                <div class="dlg-turn">A: Liù yuè sì hào shì bu shì xīngqīliù? <span class="translation">(Is June 4th Saturday?)</span></div>
+                <div class="dlg-turn">B: Liù yuè sì hào bú shì xīngqīliù, shì xīngqīwǔ. <span class="translation">(June 4th is Friday.)</span></div>
+                <div class="dlg-turn">A: Xīngqīwǔ nǐ yǒu méiyǒu kè? <span class="translation">(Do you have class on Friday?)</span></div>
+                <div class="dlg-turn">B: Wǒ shàngwǔ yǒu kè, xiàwǔ méi yǒu kè. <span class="translation">(I have class in the morning, no class in the afternoon.)</span></div>
 
-                <div class="ex-line-item" style="margin-top:1.2rem;"><span class="ex-q">Drill (7) Model:</span> A: Nǐ shì nǎr rén? <span class="translation">(Where are you from?)</span> -> B: Wǒ shì Běijīng rén. <span class="translation">(I am from Beijing.)</span> -> A: Běijīng zěnmeyàng? <span class="translation">(How is Beijing?)</span> -> B: Běijīng hěn piàoliang. <span class="translation">(Beijing is beautiful.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">1. Shànghǎi: A: Nǐ shì nǎr rén? -> B: Wǒ shì Shànghǎi rén. <span class="translation">(I am from Shanghai.)</span> | A: Shànghǎi zěnmeyàng? -> B: Shànghǎi hěn piàoliang. <span class="translation">(Shanghai is beautiful.)</span></span></div>
+                <div class="dlg-prompt-title">Prompt Answer (6/10 Thu):</div>
+                <div class="dlg-turn-ans">A: Liù yuè shí hào shì bu shì xīngqīliù? <span class="translation">(Is June 10th Saturday?)</span></div>
+                <div class="dlg-turn-ans">B: Liù yuè shí hào bú shì xīngqīliù, shì xīngqīsì. <span class="translation">(June 10th is Thursday.)</span></div>
+                <div class="dlg-turn-ans">A: Xīngqīsì nǐ yǒu méiyǒu kè? <span class="translation">(Do you have class on Thursday?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ shàngwǔ yǒu kè, xiàwǔ méi yǒu kè. <span class="translation">(I have class in the morning, no class in the afternoon.)</span></div>
 
-                <div class="ex-line-item" style="margin-top:1.2rem;"><span class="ex-q">Drill (8) Model:</span> A: Nǐ cānjiā míngtiān de jùhuì ma? <span class="translation">(Attending tomorrow's party?)</span> -> B: Wǒ dāngrán cānjiā. <span class="translation">(Of course.)</span> -> A: Wǒ mǎi liǎng píng hóng pútaojiǔ, hǎo ma? <span class="translation">(I buy 2 bottles of red wine, okay?)</span> -> B: Hǎo a, wǒ mǎi yí ge dà dàngāo. <span class="translation">(Okay, I buy a big cake.)</span></div>
-                <div class="answer-block-line"><span class="answer-text">1. Prompt (liǎng píng kělè / wǔ ge hànbǎo): A: Wǒ mǎi liǎng píng kělè, hǎo ma? <span class="translation">(I buy 2 bottles of Coke, okay?)</span> -> B: Hǎo a, wǒ mǎi wǔ ge hànbǎo. <span class="translation">(Okay, I buy 5 hamburgers.)</span></span></div>
-                <div class="answer-block-line"><span class="answer-text">2. Prompt (sān píng Xuěbì / bā ge règǒu): A: Wǒ mǎi sān píng Xuěbì, hǎo ma? <span class="translation">(I buy 3 bottles of Sprite, okay?)</span> -> B: Hǎo a, wǒ mǎi bā ge règǒu. <span class="translation">(Okay, I buy 8 hotdogs.)</span></span></div>
+                <div class="dlg-prompt-title" style="margin-top:1.8rem;">Drill (3) Model:</div>
+                <div class="dlg-turn">A: Xīngqīyī shì jǐ hào? <span class="translation">(What date is Monday?)</span></div>
+                <div class="dlg-turn">B: Xīngqīyī shì shí'èr yuè èrshí hào. <span class="translation">(Monday is Dec 20th.)</span></div>
+                <div class="dlg-turn">A: Xīngqīyī tā zuò shénme? <span class="translation">(What does he do on Monday?)</span></div>
+                <div class="dlg-turn">B: Tā qù péngyou jiā. <span class="translation">(He goes to a friend's house.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 1 (xīngqīwǔ / kàn Jīngjù):</div>
+                <div class="dlg-turn-ans">A: Xīngqīwǔ shì jǐ hào? <span class="translation">(What date is Friday?)</span></div>
+                <div class="dlg-turn-ans">B: Xīngqīwǔ shì shí'èr yuè èrshísān hào. <span class="translation">(Friday is Dec 23rd.)</span></div>
+                <div class="dlg-turn-ans">A: Xīngqīwǔ tā zuò shénme? <span class="translation">(What does he do on Friday?)</span></div>
+                <div class="dlg-turn-ans">B: Tā qù kàn Jīngjù. <span class="translation">(He watches Beijing Opera.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 2 (xīngqīliù / cānjiā jùhuì):</div>
+                <div class="dlg-turn-ans">A: Xīngqīliù shì jǐ hào? <span class="translation">(What date is Saturday?)</span></div>
+                <div class="dlg-turn-ans">B: Xīngqīliù shì shí'èr yuè èrshísì hào. <span class="translation">(Saturday is Dec 24th.)</span></div>
+                <div class="dlg-turn-ans">A: Xīngqīliù tā zuò shénme? <span class="translation">(What does he do on Saturday?)</span></div>
+                <div class="dlg-turn-ans">B: Tā cānjiā jùhuì. <span class="translation">(He attends a party.)</span></div>
+
+                <div class="dlg-prompt-title" style="margin-top:1.8rem;">Drill (4) Model:</div>
+                <div class="dlg-turn">A: Nǐ xiànzài máng bu máng? <span class="translation">(Are you busy now?)</span></div>
+                <div class="dlg-turn">B: Wǒ xiànzài hěn máng. <span class="translation">(I am busy now.)</span></div>
+                <div class="dlg-turn">A: Nǐ xīngqī jǐ yǒu shíjiān? <span class="translation">(Which day do you have time?)</span></div>
+                <div class="dlg-turn">B: Wǒ xīngqīwǔ xiàwǔ yǒu shíjiān. <span class="translation">(I have time Friday afternoon.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 1 (xīngqīrì):</div>
+                <div class="dlg-turn-ans">A: Nǐ xīngqī jǐ yǒu shíjiān? <span class="translation">(Which day do you have time?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ xīngqīrì yǒu shíjiān. <span class="translation">(I have time on Sunday.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 2 (xīngqīsì shàngwǔ):</div>
+                <div class="dlg-turn-ans">A: Nǐ xīngqī jǐ yǒu shíjiān? <span class="translation">(Which day do you have time?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ xīngqīsì shàngwǔ yǒu shíjiān. <span class="translation">(I have time Thursday morning.)</span></div>
+
+                <div class="dlg-prompt-title" style="margin-top:1.8rem;">Drill (6) Model:</div>
+                <div class="dlg-turn">A: Nǐ jīnnián duō dà? <span class="translation">(How old are you?)</span></div>
+                <div class="dlg-turn">B: Wǒ jīnnián 21 suì. <span class="translation">(I am 21.)</span></div>
+                <div class="dlg-turn">A: Nǐ de shēngri shì nǎ tiān? <span class="translation">(When is your birthday?)</span></div>
+                <div class="dlg-turn">B: Wǒ de shēngri shì 8 yuè 21 hào. <span class="translation">(My birthday is Aug 21st.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 1 (19 / 1 yuè 6 rì):</div>
+                <div class="dlg-turn-ans">A: Nǐ jīnnián duō dà? <span class="translation">(How old are you?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ jīnnián shíjiǔ suì. <span class="translation">(I am 19.)</span></div>
+                <div class="dlg-turn-ans">A: Nǐ de shēngri shì nǎ tiān? <span class="translation">(When is your birthday?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ de shēngri shì yī yuè liù hào. <span class="translation">(My birthday is Jan 6th.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 2 (20 / 3 yuè 12 rì):</div>
+                <div class="dlg-turn-ans">A: Nǐ jīnnián duō dà? <span class="translation">(How old are you?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ jīnnián èrshí suì. <span class="translation">(I am 20.)</span></div>
+                <div class="dlg-turn-ans">A: Nǐ de shēngri shì nǎ tiān? <span class="translation">(When is your birthday?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ de shēngri shì sān yuè shí'èr hào. <span class="translation">(My birthday is Mar 12th.)</span></div>
+
+                <div class="dlg-prompt-title" style="margin-top:1.8rem;">Drill (7) Model:</div>
+                <div class="dlg-turn">A: Nǐ shì nǎr rén? <span class="translation">(Where are you from?)</span></div>
+                <div class="dlg-turn">B: Wǒ shì Běijīng rén. <span class="translation">(I am from Beijing.)</span></div>
+                <div class="dlg-turn">A: Běijīng zěnmeyàng? <span class="translation">(How is Beijing?)</span></div>
+                <div class="dlg-turn">B: Běijīng hěn piàoliang. <span class="translation">(Beijing is beautiful.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt (Shànghǎi):</div>
+                <div class="dlg-turn-ans">A: Nǐ shì nǎr rén? <span class="translation">(Where are you from?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ shì Shànghǎi rén. <span class="translation">(I am from Shanghai.)</span></div>
+                <div class="dlg-turn-ans">A: Shànghǎi zěnmeyàng? <span class="translation">(How is Shanghai?)</span></div>
+                <div class="dlg-turn-ans">B: Shànghǎi hěn piàoliang. <span class="translation">(Shanghai is beautiful.)</span></div>
+
+                <div class="dlg-prompt-title" style="margin-top:1.8rem;">Drill (8) Model:</div>
+                <div class="dlg-turn">A: Nǐ cānjiā míngtiān de jùhuì ma? <span class="translation">(Attending tomorrow's party?)</span></div>
+                <div class="dlg-turn">B: Wǒ dāngrán cānjiā. <span class="translation">(Of course.)</span></div>
+                <div class="dlg-turn">A: Wǒ mǎi liǎng píng hóng pútaojiǔ, hǎo ma? <span class="translation">(I buy 2 bottles of red wine, okay?)</span></div>
+                <div class="dlg-turn">B: Hǎo a, wǒ mǎi yí ge dà dàngāo. <span class="translation">(Okay, I buy a big cake.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 1 (liǎng píng kělè / wǔ ge hànbǎo):</div>
+                <div class="dlg-turn-ans">A: Wǒ mǎi liǎng píng kělè, hǎo ma? <span class="translation">(I buy 2 bottles of Coke, okay?)</span></div>
+                <div class="dlg-turn-ans">B: Hǎo a, wǒ mǎi wǔ ge hànbǎo. <span class="translation">(Okay, I buy 5 hamburgers.)</span></div>
+
+                <div class="dlg-prompt-title">Prompt 2 (sān píng Xuěbì / bā ge règǒu):</div>
+                <div class="dlg-turn-ans">A: Wǒ mǎi sān píng Xuěbì, hǎo ma? <span class="translation">(I buy 3 bottles of Sprite, okay?)</span></div>
+                <div class="dlg-turn-ans">B: Hǎo a, wǒ mǎi bā ge règǒu. <span class="translation">(Okay, I buy 8 hotdogs.)</span></div>
             </div>
 
             <!-- EXERCISE 3 -->
             <div class="card">
                 <div class="card-title">3. Answer the Questions (Pg 139)</div>
-                <div class="ex-line-item"><span class="ex-q">1. Q:</span> Yì nián yǒu jǐ ge yuè? <span class="translation">(How many months in a year?)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans: Yì nián yǒu shí'èr ge yuè. <span class="translation">(There are 12 months in a year.)</span></span></div>
+                <div class="dlg-turn"><span class="ex-q">1. Q:</span> Yì nián yǒu jǐ ge yuè? <span class="translation">(How many months in a year?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Yì nián yǒu shí'èr ge yuè. <span class="translation">(There are 12 months in a year.)</span></div>
 
-                <div class="ex-line-item"><span class="ex-q">2. Q:</span> Yì nián yǒu duōshao ge xīngqī? <span class="translation">(How many weeks in a year?)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans: Yì nián yǒu wǔshí'èr ge xīngqī. <span class="translation">(There are 52 weeks in a year.)</span></span></div>
+                <div class="dlg-turn" style="margin-top:0.8rem;"><span class="ex-q">2. Q:</span> Yì nián yǒu duōshao ge xīngqī? <span class="translation">(How many weeks in a year?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Yì nián yǒu wǔshí'èr ge xīngqī. <span class="translation">(There are 52 weeks in a year.)</span></div>
 
-                <div class="ex-line-item"><span class="ex-q">3. Q:</span> Yí ge xīngqī yǒu jǐ tiān? <span class="translation">(How many days in a week?)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans: Yí ge xīngqī yǒu qī tiān. <span class="translation">(There are 7 days in a week.)</span></span></div>
+                <div class="dlg-turn" style="margin-top:0.8rem;"><span class="ex-q">3. Q:</span> Yí ge xīngqī yǒu jǐ tiān? <span class="translation">(How many days in a week?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Yí ge xīngqī yǒu qī tiān. <span class="translation">(There are 7 days in a week.)</span></div>
 
-                <div class="ex-line-item"><span class="ex-q">4. Q:</span> Shíyī yuè yǒu duōshao tiān? <span class="translation">(How many days in November?)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans: Shíyī yuè yǒu sānshí tiān. <span class="translation">(There are 30 days in November.)</span></span></div>
+                <div class="dlg-turn" style="margin-top:0.8rem;"><span class="ex-q">4. Q:</span> Shíyī yuè yǒu duōshao tiān? <span class="translation">(How many days in November?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Shíyī yuè yǒu sānshí tiān. <span class="translation">(There are 30 days in November.)</span></div>
 
-                <div class="ex-line-item"><span class="ex-q">5. Q:</span> Jīntiān jǐ yuè jǐ hào? Xīngqī jǐ? <span class="translation">(What is today's date and weekday?)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans: Jīntiān [Month] yuè [Day] hào, xīngqī [Weekday]. <span class="translation">(Today is [Month] [Day], [Weekday].)</span></span></div>
+                <div class="dlg-turn" style="margin-top:0.8rem;"><span class="ex-q">5. Q:</span> Jīntiān jǐ yuè jǐ hào? Xīngqī jǐ? <span class="translation">(What is today's date and weekday?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Jīntiān [Month] yuè [Day] hào, xīngqī [Weekday]. <span class="translation">(Today is [Month] [Day], [Weekday].)</span></div>
 
-                <div class="ex-line-item"><span class="ex-q">6. Q:</span> Nǐ xǐhuan chī shénme? Xǐhuan chī Zhōngcān ma? <span class="translation">(What do you like to eat? Do you like Chinese food?)</span></div>
-                <div class="answer-block-line"><span class="answer-text">Ans: Wǒ xǐhuan chī kǎoyā. Wǒ hěn xǐhuan chī Zhōngcān. <span class="translation">(I like eating roast duck. I really like Chinese food.)</span></span></div>
+                <div class="dlg-turn" style="margin-top:0.8rem;"><span class="ex-q">6. Q:</span> Nǐ xǐhuan chī shénme? Xǐhuan chī Zhōngcān ma? <span class="translation">(What do you like to eat? Do you like Chinese food?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Wǒ xǐhuan chī kǎoyā. Wǒ hěn xǐhuan chī Zhōngcān. <span class="translation">(I like eating roast duck. I really like Chinese food.)</span></div>
             </div>
 
             <!-- EXERCISE 4 -->
             <div class="card">
                 <div class="card-title">4. Conversation Practice (Pg 139-140)</div>
-                <div class="ex-line-item"><span class="ex-q">Topic 1 (Appointment):</span> A: Nǐ zěnmeyàng? Máng bu máng? <span class="translation">(How are you? Busy?)</span> | B: <span class="answer-text">Wǒ jīntiān hěn máng.</span> <span class="translation">(I am busy today.)</span> | A: Xīngqīwǔ xiàwǔ nǐ yǒu shíjiān ma? Wǒmen qù <span class="answer-text">chī Běijīng kǎoyā</span>, hǎo ma? <span class="translation">(Time Friday afternoon? We go eat roast duck, okay?)</span> | B: Tài hǎo le, wǒ dāngrán qù. <span class="translation">(Great, of course I go.)</span></div>
-                
-                <div class="ex-line-item" style="margin-top:0.8rem;"><span class="ex-q">Topic 2 (Age):</span> A: Nǐ jīnnián duō dà? <span class="translation">(How old are you?)</span> | B: Wǒ jīnnián <span class="answer-text">èrshí suì</span>. <span class="translation">(I am 20.)</span> | A: Nǐ de shēngri shì nǎ tiān? <span class="translation">(When is your birthday?)</span> | B: Xīngqīwǔ shì wǒ de shēngri. <span class="translation">(Friday is my birthday.)</span> | A: Shì ma? <span class="answer-text">Zhù nǐ shēngri kuàilè</span>! <span class="translation">(Really? Happy birthday!)</span> | B: Xièxie. <span class="translation">(Thanks.)</span></div>
-                
-                <div class="ex-line-item" style="margin-top:0.8rem;"><span class="ex-q">Topic 3 (Party):</span> A: Xià xīngqīwǔ shì Lín Nà de shēngri... Nǐ lái bu lái? <span class="translation">(Next Friday is Lin Na's birthday... Are you coming?)</span> | B: Wǒ dāngrán lái. <span class="answer-text">Wǒ mǎi yí ge dà dàngāo</span>, hǎo ma? <span class="translation">(Of course. I buy a big cake, okay?)</span> | A: Hǎo a! Wǒ mǎi <span class="answer-text">liǎng píng hóng pútaojiǔ</span>. <span class="translation">(Great! I buy 2 bottles of red wine.)</span></div>
+                <div class="dlg-prompt-title">Topic 1: Making an Appointment (1)</div>
+                <div class="dlg-turn">A: Nǐ zěnmeyàng? Máng bu máng? <span class="translation">(How are you? Busy?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ jīntiān hěn máng. <span class="translation">(I am busy today.)</span></div>
+                <div class="dlg-turn">A: Xīngqīwǔ xiàwǔ nǐ yǒu shíjiān ma? Wǒmen qù chī Běijīng kǎoyā, hǎo ma? <span class="translation">(Free Friday afternoon? We go eat roast duck, okay?)</span></div>
+                <div class="dlg-turn-ans">B: Tài hǎo le, wǒ dāngrán qù. <span class="translation">(Great, of course I go.)</span></div>
+
+                <div class="dlg-prompt-title">Topic 1: Making an Appointment (2)</div>
+                <div class="dlg-turn">A: Shí'èr hào wǒmen xiàwǔ yǒu ge jùhuì, nǐ cānjiā bu cānjiā? <span class="translation">(Party on the afternoon of 12th, joining?)</span></div>
+                <div class="dlg-turn-ans">B: Duìbuqǐ, wǒ xiàwǔ yǒu kè, kǒngpà bù xíng. <span class="translation">(Sorry, I have class, afraid I can't.)</span></div>
+                <div class="dlg-turn">A: Méi guānxi. <span class="translation">(No problem.)</span></div>
+
+                <div class="dlg-prompt-title">Topic 2: Asking Age</div>
+                <div class="dlg-turn">A: Nǐ jīnnián duō dà? <span class="translation">(How old are you?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ jīnnián èrshí suì. <span class="translation">(I am 20.)</span></div>
+                <div class="dlg-turn">A: Nǐ de shēngri shì nǎ tiān? <span class="translation">(When is your birthday?)</span></div>
+                <div class="dlg-turn">B: Xīngqīwǔ shì wǒ de shēngri. <span class="translation">(Friday is my birthday.)</span></div>
+                <div class="dlg-turn">A: Shì ma? Zhù nǐ shēngri kuàilè! <span class="translation">(Really? Happy birthday!)</span></div>
+                <div class="dlg-turn-ans">B: Xièxie. <span class="translation">(Thanks.)</span></div>
+
+                <div class="dlg-prompt-title">Topic 3: Celebrating Birthday</div>
+                <div class="dlg-turn">A: Xià xīngqīwǔ shì Lín Nà de shēngri... Nǐ lái bu lái? <span class="translation">(Next Friday is Lin Na's birthday... Coming?)</span></div>
+                <div class="dlg-turn-ans">B: Wǒ dāngrán lái. Wǒ mǎi yí ge dà dàngāo, hǎo ma? <span class="translation">(Of course. I buy a big cake, okay?)</span></div>
+                <div class="dlg-turn">A: Hǎo a! Wǒ mǎi liǎng píng hóng pútaojiǔ. <span class="translation">(Great! I buy 2 bottles of red wine.)</span></div>
             </div>
 
             <!-- READING & PARAPHRASING -->
@@ -663,10 +780,18 @@
                     Sòng Huá shì jīngjì xì de xuésheng, Běijīng rén, 1982 nián chūshēng. Jīnnián shí yuè èrshíqī rì shì tā èrshí suì de shēngri. Xīngqītiān xiàwǔ, tā de hǎo péngyou men yǒu yí ge jùhuì, Wáng Xiǎoyún, Lín Nà, Dīng Lìbō hé Mǎ Dàwéi dōu lái zhùhè tā de shēngri. Tāmen zài Běijīng kǎoyā diàn chī kǎoyā hé shòumiàn, hē hóng pútaojiǔ. Péngyou men zhù Sòng Huá shēngri kuàilè, Sòng Huá fēicháng gāoxìng. <br><br>
                     Lín Nà de shēngri shì shíyī yuè shí'èr hào. Sòng Huá shuō nà tiān tāmen zài lái chī shòumiàn hé kǎoyā.
                 </div>
-                <div class="ex-line-item"><span class="ex-q">1. Q:</span> Sòng Huá shì nǎr rén? <span class="translation">(Where is Song Hua from?)</span> -> <span class="answer-text">Ans: Sòng Huá shì Běijīng rén. <span class="translation">(Song Hua is from Beijing.)</span></span></div>
-                <div class="ex-line-item"><span class="ex-q">2. Q:</span> Tā nǎ nián chūshēng? Jīnnián duō dà? <span class="translation">(Which year born? How old?)</span> -> <span class="answer-text">Ans: Tā 1982 nián chūshēng, jīnnián èrshí suì. <span class="translation">(Born in 1982, 20 years old.)</span></span></div>
-                <div class="ex-line-item"><span class="ex-q">3. Q:</span> Tā de shēngri shì jǐ yuè jǐ hào? <span class="translation">(When is his birthday?)</span> -> <span class="answer-text">Ans: Tā de shēngri shì shí yuè èrshíqī hào. <span class="translation">(His birthday is Oct 27th.)</span></span></div>
-                <div class="ex-line-item"><span class="ex-q">4. Q:</span> Tāmen zài nǎr chī kǎoyā? <span class="translation">(Where do they eat roast duck?)</span> -> <span class="answer-text">Ans: Tāmen zài Běijīng kǎoyā diàn chī kǎoyā. <span class="translation">(They eat at Beijing Roast Duck Restaurant.)</span></span></div>
+                
+                <div class="dlg-turn"><span class="ex-q">1. Q:</span> Sòng Huá shì nǎr rén? <span class="translation">(Where is Song Hua from?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Sòng Huá shì Běijīng rén. <span class="translation">(Song Hua is from Beijing.)</span></div>
+
+                <div class="dlg-turn" style="margin-top:0.6rem;"><span class="ex-q">2. Q:</span> Tā nǎ nián chūshēng? Jīnnián duō dà? <span class="translation">(Which year born? How old?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Tā 1982 nián chūshēng, jīnnián èrshí suì. <span class="translation">(Born in 1982, 20 years old.)</span></div>
+
+                <div class="dlg-turn" style="margin-top:0.6rem;"><span class="ex-q">3. Q:</span> Tā de shēngri shì jǐ yuè jǐ hào? <span class="translation">(When is his birthday?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Tā de shēngri shì shí yuè èrshíqī hào. <span class="translation">(His birthday is Oct 27th.)</span></div>
+
+                <div class="dlg-turn" style="margin-top:0.6rem;"><span class="ex-q">4. Q:</span> Tāmen zài nǎr chī kǎoyā? <span class="translation">(Where do they eat roast duck?)</span></div>
+                <div class="dlg-turn-ans"><span class="ex-q">Ans:</span> Tāmen zài Běijīng kǎoyā diàn chī kǎoyā. <span class="translation">(They eat at Beijing Roast Duck Restaurant.)</span></div>
             </div>
         </section>
 
